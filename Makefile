@@ -9,4 +9,4 @@ lint:
 	PYTHONPATH=src pylint --disable=R,C src/epic_ecal_ai/
 
 test:
-	MPLBACKEND=Agg PYTHONPATH=src pytest -v src/tests/*.py
+	MPLBACKEND=Agg PYTHONPATH=src pytest -v src/tests/*.py 
