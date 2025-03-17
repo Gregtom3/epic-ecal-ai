@@ -4,7 +4,7 @@
 
 # AI for the ePIC Barrel Calorimeter
 
-A repository for testing/implementing AI methods with the ePIC barrel calorimeter.
+A repository for testing/implementing AI methods with the ePIC barrel calorimeter. 
 
 ## Latest Results
 
