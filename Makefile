@@ -8,4 +8,7 @@ format:
 lint:
 	pylint --disable=R,C src/epic-ecal-ai/*.py
 
-all: install format lint
+test:
+	pytest -v src/epic-ecal-ai/tests
+
+all: install format lint test 
