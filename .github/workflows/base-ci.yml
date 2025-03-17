@@ -19,7 +19,7 @@ jobs:
     - name: Upload artifacts
       uses: actions/upload-artifact@v4 
       with:
-        name: test-plots
+        name: artifacts
         path: ./artifacts/
 
     - name: Publish to GitHub Pages
