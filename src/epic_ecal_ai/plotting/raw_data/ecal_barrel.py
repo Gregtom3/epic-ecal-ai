@@ -119,7 +119,8 @@ def ecalBarrelPlot_v2(events=None, particle=None, outdir=None, return_plot=False
         # Plot the hit positions as markers, colored by energy.
         sc = axs[i].scatter(x_event, y_event, c=energy_event, cmap="rainbow",
                             vmin=energy_min, vmax=energy_max, marker='o', s=25)
-        axs[i].set_grid(True)
+        
+        axs[i].grid(True)
         axs[i].set_xlabel("X")
         axs[i].set_ylabel("Y")
         axs[i].set_xlim(-800,800)
