@@ -9,7 +9,7 @@ def test_electron_plot():
     plt.savefig("artifacts/save.png")
     plt.close()
     return 
-    outdir = "artifacts"
+    outdir = "artifacts" 
     events = dataLoader.load_uproot_events("electron",0,"dropbox")
     particleKinematicsPlot(events = events,
                            outdir = outdir,
