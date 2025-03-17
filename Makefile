@@ -3,4 +3,9 @@ install:
 	pip install -r requirements.txt
 
 format:
-	black 
+	black src/epic-ecal-ai/*.py
+
+lint:
+	pylint --disable=R,C src/epic-ecal-ai/*.py
+
+all: install format lint
