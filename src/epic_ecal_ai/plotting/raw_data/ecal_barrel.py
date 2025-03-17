@@ -117,10 +117,13 @@ def ecalBarrelPlot_v2(events=None, particle=None, outdir=None, return_plot=False
         energy_event = ak.to_numpy(energy_all[i])
         
         # Plot the hit positions as markers, colored by energy.
-        sc = axs[i].scatter(x_event, y_event, c=energy_event, cmap="PuRd",
-                            vmin=energy_min, vmax=energy_max, marker='o')
+        sc = axs[i].scatter(x_event, y_event, c=energy_event, cmap="rainbow",
+                            vmin=energy_min, vmax=energy_max, marker='o', s=25)
+        axs[i].set_grid(True)
         axs[i].set_xlabel("X")
         axs[i].set_ylabel("Y")
+        axs[i].set_xlim(-800,800)
+        axs[i].set_ylim(-800,800)
         axs[i].set_title(f"Event {i}")
         
         # For this event, extract MCParticles that have generatorStatus==1
