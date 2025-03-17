@@ -12,13 +12,21 @@ Results are taken from the functions in `src/tests/`.
 
 ### test02_particle-kinematics
 
+- Electron
+
 ![Electron Plot](https://github.com/Gregtom3/epic-ecal-ai/blob/gh-pages/artifacts/particle-kinematics/electron_kinematics.png)
+
+- Pion
 
 ![Pion Plot](https://github.com/Gregtom3/epic-ecal-ai/blob/gh-pages/artifacts/particle-kinematics/pion_kinematics.png)
 
 ### test03_ecal-barrel
 
+- Electron
+
 ![Electron Plot](https://github.com/Gregtom3/epic-ecal-ai/blob/gh-pages/artifacts/ecal-barrel/electron_ecalBarrelPlot_v1.png)
+
+- Pion
 
 ![Pion Plot](https://github.com/Gregtom3/epic-ecal-ai/blob/gh-pages/artifacts/ecal-barrel/pion_ecalBarrelPlot_v1.png)
 

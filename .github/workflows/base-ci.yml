@@ -1,4 +1,5 @@
-name: Make environment
+name: Project Development
+
 on: [push]
 
 jobs:

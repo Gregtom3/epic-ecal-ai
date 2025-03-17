@@ -75,8 +75,6 @@ def particleKinematicsPlot(events=None, particle=None, outdir=None, return_plot=
     axs[1, 2].hist(phi, bins=50, color="red", edgecolor="black")
     axs[1, 2].set_xlabel("$\phi$ [deg]", fontsize=15)
 
-    plt.tight_layout()
-    
     if particle is not None:
         fig.suptitle(f"{particle.capitalize()} kinematics",y=1.05, fontsize=20)
 
