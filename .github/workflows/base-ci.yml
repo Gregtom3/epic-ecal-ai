@@ -21,3 +21,9 @@ jobs:
       with:
         name: test-plots
         path: ./artifacts/
+
+    - name: Publish to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        branch: gh-pages
+        folder: ./artifacts/
