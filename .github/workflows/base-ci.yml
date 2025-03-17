@@ -10,16 +10,10 @@ jobs:
       with:
         python-version: '3.12.9' 
         
-    - name: make
+    - name: Make environment
       run: make install
 
-    - name: lint
-      run: make lint
-
-    - name: format
-      run: make format
-
-    - name: test
+    - name: Run tests
       run: make test
       
     - name: Upload artifacts

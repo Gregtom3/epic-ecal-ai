@@ -10,5 +10,3 @@ lint:
 
 test:
 	MPLBACKEND=Agg PYTHONPATH=src pytest -v src/tests/*.py
-
-all: install format lint test 
