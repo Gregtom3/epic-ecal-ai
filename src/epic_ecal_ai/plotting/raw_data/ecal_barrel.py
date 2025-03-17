@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import os
 import awkward as ak
 import uproot
-
+import numpy as np
 
 def ecalBarrelPlot_v1(events=None, particle=None, outdir=None, return_plot=False):
     """
