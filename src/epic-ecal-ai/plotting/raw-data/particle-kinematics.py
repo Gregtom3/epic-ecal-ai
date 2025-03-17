@@ -35,7 +35,7 @@ def particleKinematicsPlot(events=None,particle=None,outdir=None,return_plot=Fal
     mom_y_sel = mom_y[mask]
     mom_z_sel = mom_z[mask]
 
-    # Flatten the jagged arrays into a single 1D array (if you want to plot all particles)
+    # Flatten the jagged arrays into a single 1D array
     mom_x_flat = ak.to_numpy(ak.flatten(mom_x_sel))
     mom_y_flat = ak.to_numpy(ak.flatten(mom_y_sel))
     mom_z_flat = ak.to_numpy(ak.flatten(mom_z_sel))
