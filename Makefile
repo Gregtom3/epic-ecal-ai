@@ -9,6 +9,6 @@ lint:
 	pylint --disable=R,C src/epic-ecal-ai/*.py
 
 test:
-	pytest -v tests/
+	pytest -v src/tests/
 
 all: install format lint test 
