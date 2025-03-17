@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import os
 def test_electron_plot():
     os.makedirs("artifacts",exist_ok=True)
-    plt.plot([1],[2])
+    plt.plot([1],[29])
     plt.savefig("artifacts/save.png")
     plt.close()
     return 
@@ -19,8 +19,8 @@ def test_electron_plot():
 
 def test_pion_plot():
     os.makedirs("artifacts",exist_ok=True)
-    plt.plot([1],[2])
-    plt.savefig("artifacts/save.png")
+    plt.plot([1],[20])
+    plt.savefig("artifacts/save2.png")
     plt.close()
     return 
     
