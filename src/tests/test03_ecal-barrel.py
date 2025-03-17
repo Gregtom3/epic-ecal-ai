@@ -4,6 +4,7 @@ from epic_ecal_ai.plotting.raw_data.ecal_barrel import ecalBarrelPlot_v1
 import matplotlib.pyplot as plt
 
 def test_electron_plot():
+    os.makedirs("artifacts",exist_ok=True)
     plt.plot([1],[2])
     plt.savefig("artifacts/save.png")
     plt.close()
@@ -17,6 +18,7 @@ def test_electron_plot():
                            return_plot = False)
 
 def test_pion_plot():
+    os.makedirs("artifacts",exist_ok=True)
     plt.plot([1],[2])
     plt.savefig("artifacts/save.png")
     plt.close()
