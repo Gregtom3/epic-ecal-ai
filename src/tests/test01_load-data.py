@@ -1,5 +1,5 @@
 import pytest
-from epic_ecal_ai.dataloader import dataloader
+from epic_ecal_ai.dataloader import dataLoader
 from epic_ecal_ai.dataloader import dropboxLoader
 
 def test_dropboxLoader():
@@ -18,9 +18,9 @@ def test_dataloader():
 
     # Test bad source
     with pytest.raises(ValueError):
-        dataloader.load_uproot_events("electron", 0, "google-drive")
+        dataLoader.load_uproot_events("electron", 0, "google-drive")
 
     with pytest.raises(AssertionError):
-        dataloader.load_uproot_events("electron", 1234, "dropbox")
+        dataLoader.load_uproot_events("electron", 1234, "dropbox")
 
     

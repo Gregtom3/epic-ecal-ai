@@ -3,10 +3,10 @@ install:
 	pip install -r requirements.txt
 
 format:
-	black src/epic-ecal-ai/*.py
+	black src/epic_ecal_ai/
 
 lint:
-	pylint --disable=R,C src/epic_ecal_ai/*.py
+	PYTHONPATH=src pylint --disable=R,C src/epic_ecal_ai/
 
 test:
 	MPLBACKEND=Agg PYTHONPATH=src pytest -v src/tests/*.py
