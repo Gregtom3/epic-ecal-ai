@@ -7,7 +7,7 @@ def test_electron_plot():
     os.makedirs("artifacts",exist_ok=True)
     plt.plot([1],[29])
     plt.savefig("artifacts/save.png")
-    plt.close()
+    plt.close() 
     return 
 
     outdir = "artifacts"
