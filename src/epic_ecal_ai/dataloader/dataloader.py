@@ -1,7 +1,7 @@
 import uproot
 from epic_ecal_ai.dataloader import dropboxLoader
 
-def load_uproot_events(particle: str, index: int, source: str) --> uproot.TBranch:
+def load_uproot_events(particle: str, index: int, source: str) -> uproot.TBranch:
     """
     Loads an uproot TBranch from a given file.
 

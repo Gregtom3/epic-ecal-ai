@@ -6,13 +6,13 @@ def test_dropboxLoader():
 
     # Test all 'electron' and 'pion' files
     for i in range(len(dropboxLoader.ELECTRON_FILES)):
-        assert dropboxLoader.get_dropbox_filename("electron", i) == dropboxLoader.ELECTRON_FILES[i]
+        assert dropboxLoader.load_dropbox_filename("electron", i) == dropboxLoader.ELECTRON_FILES[i]
     for i in range(len(dropboxLoader.PION_FILES)):
-        assert dropboxLoader.get_dropbox_filename("pion", i) == dropboxLoader.PION_FILES[i]
+        assert dropboxLoader.load_dropbox_filename("pion", i) == dropboxLoader.PION_FILES[i]
 
     # Test exception for 'muon' (no file)
     with pytest.raises(ValueError):
-        dropboxLoader.get_dropbox_filename("muon", 0)
+        dropboxLoader.load_dropbox_filename("muon", 0)
     
 def test_dataloader():
 

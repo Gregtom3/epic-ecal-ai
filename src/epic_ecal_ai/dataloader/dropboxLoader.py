@@ -4,7 +4,7 @@ ELECTRON_FILES = ["https://duke.box.com/shared/static/vyiizlfvwz6tmfupey5hxluc45
 PION_FILES     = ["https://duke.box.com/shared/static/zlojdktck99wygbn8bwku778rqty9rir.root"]
 
 
-def get_dropbox_filename(particle: str, index: int) -> list:
+def load_dropbox_filename(particle: str, index: int) -> list:
     """ 
     Gets a list of filenames from a given version.
     
