@@ -1,5 +1,6 @@
 import uproot
 from epic_ecal_ai.dataloader import dropboxLoader
+import re
 
 def load_uproot_events(particle: str, index: int, source: str) -> uproot.TBranch:
     """
@@ -23,7 +24,8 @@ def load_uproot_events(particle: str, index: int, source: str) -> uproot.TBranch
     f = uproot.open(filename)
 
     # Assert 'f' contains the correct keys
-    assert 'events' in f.keys(), f"Error: `events` branch not in file {filename}"
+    pattern = re.compile(r"events*")
+    assert any(pattern.search(item) for item in f.keys()), f"Error: `events` branch not in file {filename}"
 
     # Load events TTree
     events = f['events']
