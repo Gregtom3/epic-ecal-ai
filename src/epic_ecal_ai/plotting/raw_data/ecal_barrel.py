@@ -117,14 +117,14 @@ def ecalBarrelPlot_v2(events=None, particle=None, outdir=None, return_plot=False
         energy_event = ak.to_numpy(energy_all[i])
         
         # Plot the hit positions as markers, colored by energy.
-        sc = axs[i].scatter(x_event, y_event, c=energy_event, cmap="rainbow",
-                            vmin=energy_min, vmax=energy_max, marker='o', s=25)
+        sc = axs[i].scatter(x_event, y_event, c=energy_event, cmap="plasma",
+                            vmin=energy_min, vmax=energy_max, marker='o', alpha=0.8, s=25)
         
         axs[i].grid(True)
         axs[i].set_xlabel("X")
         axs[i].set_ylabel("Y")
-        axs[i].set_xlim(-800,800)
-        axs[i].set_ylim(-800,800)
+        axs[i].set_xlim(-900,900)
+        axs[i].set_ylim(-900,900)
         axs[i].set_title(f"Event {i}")
         
         # For this event, extract MCParticles that have generatorStatus==1
@@ -149,8 +149,8 @@ def ecalBarrelPlot_v2(events=None, particle=None, outdir=None, return_plot=False
         else:
             label_text = "P = N/A\nθ = N/A\nφ = N/A"
         
-        # Annotate the subplot in the top left with the kinematic info using a rounded bbox.
-        axs[i].text(0.05, 0.95, label_text, transform=axs[i].transAxes,
+        # Annotate the subplot
+        axs[i].text(0.5, 0.5, label_text, transform=axs[i].transAxes,
                     fontsize=9, verticalalignment='top',
                     bbox=dict(boxstyle="round", facecolor="white", alpha=0.8))
     
