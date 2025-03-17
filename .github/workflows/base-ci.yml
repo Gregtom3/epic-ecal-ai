@@ -1,26 +1,38 @@
 name: Make environment
 on: [push]
+
 jobs:
   build:
     runs-on: ubuntu-latest
     
     steps:
     - uses: actions/checkout@v4
+
     - uses: actions/setup-python@v5
       with:
-        python-version: '3.12.9' 
-        
-    - name: Make environment
+        python-version: '3.12.9'
+
+    - name: Install dependencies
       run: make install
 
-    - name: Run tests
+    - name: Run tests and generate plots
       run: make test
-      
+
+    - name: Debug List artifacts before upload
+      run: ls -R ./artifacts/ || echo "No artifacts found!"
+
     - name: Upload artifacts
-      uses: actions/upload-artifact@v4 
+      uses: actions/upload-artifact@v4
       with:
         name: artifacts
         path: ./artifacts/
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    
+    - uses: actions/checkout@v4
 
     - name: Download Artifacts
       uses: actions/download-artifact@v4
@@ -29,7 +41,7 @@ jobs:
         path: ./artifacts/
 
     - name: Debug List downloaded artifacts
-      run: ls -R ./artifacts/
+      run: ls -R ./artifacts/ || echo "No artifacts found after download!"
 
     - name: Publish to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
@@ -37,4 +49,4 @@ jobs:
         branch: gh-pages
         folder: ./artifacts/
         token: ${{ secrets.PAT_GH_PAGES }}
-
+        clean: true
