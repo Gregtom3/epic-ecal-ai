@@ -59,10 +59,11 @@ def ecalBarrelPlot_v1(events=None, particle=None, outdir=None, return_plot=False
     axs[2].set_ylabel("Z")
     axs[2].set_title("ECAL Imaging RecHits: YZ")
 
-    plt.tight_layout()
-
     if particle is not None:
-        plt.suptitle(f"{particle} ECAL Barrel Imaging RecHits")
+        fig.suptitle(f"{particle.capitalize()} ECAL Barrel Imaging RecHits",y=1.05,fontsize=20)
+    # Capitalize the first letter in particle
+
+    plt.tight_layout()
 
     if outdir is not None:
         particle_savename = particle if particle is not None else ""

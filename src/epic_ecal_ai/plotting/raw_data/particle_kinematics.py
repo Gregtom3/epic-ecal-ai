@@ -66,7 +66,7 @@ def particleKinematicsPlot(events=None, particle=None, outdir=None, return_plot=
     axs[0, 2].hist(mom_z_flat, bins=50, color="red", edgecolor="black")
     axs[0, 2].set_xlabel("$P_{Z}$ [GeV]", fontsize=15)
 
-    axs[1, 0].hist(p_total, bins=50, color="red", edgecolor="black")
+    axs[1, 0].hist(p_total, bins=50, range=(0,10), color="red", edgecolor="black")
     axs[1, 0].set_xlabel("$P$ [GeV]", fontsize=15)
 
     axs[1, 1].hist(theta, bins=50, color="red", edgecolor="black")
@@ -75,10 +75,12 @@ def particleKinematicsPlot(events=None, particle=None, outdir=None, return_plot=
     axs[1, 2].hist(phi, bins=50, color="red", edgecolor="black")
     axs[1, 2].set_xlabel("$\phi$ [deg]", fontsize=15)
 
+    if particle is not None:
+        fig.suptitle(f"{particle.capitalize()} kinematics",y=1.05, fontsize=20)
+
     plt.tight_layout()
 
-    if particle is not None:
-        plt.suptitle(f"{particle} kinematics")
+
 
     if outdir is not None:
         particle_savename = particle if particle is not None else ""
