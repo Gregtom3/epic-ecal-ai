@@ -92,11 +92,6 @@ def ecalBarrelPlot_v2(events=None, particle=None, outdir=None, return_plot=False
     y_all = events["EcalBarrelImagingRecHits/EcalBarrelImagingRecHits.position.y"].array(library="ak")
     energy_all = events["EcalBarrelImagingRecHits/EcalBarrelImagingRecHits.energy"].array(library="ak")
     
-    # Compute overall energy min and max for consistent color scaling
-    energy_all_flat = ak.to_numpy(ak.flatten(energy_all))
-    energy_min = np.min(energy_all_flat)
-    energy_max = np.max(energy_all_flat)
-    
     # Load MCParticles arrays for kinematics
     gen_status_all = events["MCParticles/MCParticles.generatorStatus"].array(library="ak")
     mom_x_all = events["MCParticles/MCParticles.momentum.x"].array(library="ak")
@@ -106,6 +101,11 @@ def ecalBarrelPlot_v2(events=None, particle=None, outdir=None, return_plot=False
     # Determine the number of events to plot (up to 8)
     num_events = min(8, len(x_all))
     
+    # Compute overall energy min and max for consistent color scaling
+    energy_all_flat = ak.to_numpy(ak.flatten(energy_all))
+    energy_min = np.min(energy_all_flat[:num_events])
+    energy_max = np.max(energy_all_flat[:num_events])
+
     # Create a 2x4 grid of subplots
     fig, axs = plt.subplots(2, 4, figsize=(16, 8), dpi=200)
     axs = axs.flatten()  # easier to index in a 1D loop
