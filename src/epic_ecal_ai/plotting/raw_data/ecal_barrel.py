@@ -4,10 +4,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import uproot
 import os
+import awkward as ak
 
 def ecalBarrelPlot_v1(events=None,particle=None,outdir=None,return_plot=False):
     """
-    Plots hits from the ECAL barrel using EcalBarrelImagingHits
+    Plots hits from the ECAL barrel using EcalBarrelImagingRecHits
 
     Args:
         events: Uproot TTree.
@@ -17,9 +18,9 @@ def ecalBarrelPlot_v1(events=None,particle=None,outdir=None,return_plot=False):
     """
 
     # Load the ECAL Barrel Imaging Hits positions into awkward arrays
-    x_all = events["EcalBarrelImagingHits/EcalBarrelImagingHits.position.x"].array(library="ak")
-    y_all = events["EcalBarrelImagingHits/EcalBarrelImagingHits.position.y"].array(library="ak")
-    z_all = events["EcalBarrelImagingHits/EcalBarrelImagingHits.position.z"].array(library="ak")
+    x_all = events["EcalBarrelImagingRecHits/EcalBarrelImagingRecHits.position.x"].array(library="ak")
+    y_all = events["EcalBarrelImagingRecHits/EcalBarrelImagingRecHits.position.y"].array(library="ak")
+    z_all = events["EcalBarrelImagingRecHits/EcalBarrelImagingRecHits.position.z"].array(library="ak")
 
     # Flatten the arrays
     x_all_flat = ak.to_numpy(ak.flatten(x_all))
@@ -33,24 +34,24 @@ def ecalBarrelPlot_v1(events=None,particle=None,outdir=None,return_plot=False):
     h1 = axs[0].hist2d(x_all_flat, y_all_flat, bins=100, cmap="rainbow", cmin=0.1)
     axs[0].set_xlabel("X")
     axs[0].set_ylabel("Y")
-    axs[0].set_title("ECAL Imaging Hits: XY")
+    axs[0].set_title("ECAL Imaging RecHits: XY")
 
     # XZ projection
     h2 = axs[1].hist2d(x_all_flat, z_all_flat, bins=100, cmap="rainbow", cmin=0.1)
     axs[1].set_xlabel("X")
     axs[1].set_ylabel("Z")
-    axs[1].set_title("ECAL Imaging Hits: XZ")
+    axs[1].set_title("ECAL Imaging RecHits: XZ")
 
     # YZ projection
     h3 = axs[2].hist2d(y_all_flat, z_all_flat, bins=100, cmap="rainbow", cmin=0.1)
     axs[2].set_xlabel("Y")
     axs[2].set_ylabel("Z")
-    axs[2].set_title("ECAL Imaging Hits: YZ")
+    axs[2].set_title("ECAL Imaging RecHits: YZ")
 
     plt.tight_layout()
 
     if particle is not None:
-        plt.suptitle(f"{particle} ECAL Barrel Imaging Hits")
+        plt.suptitle(f"{particle} ECAL Barrel Imaging RecHits")
 
     if outdir is not None:
         particle_savename = particle if particle is not None else ''

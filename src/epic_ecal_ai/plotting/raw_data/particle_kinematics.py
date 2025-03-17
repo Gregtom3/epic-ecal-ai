@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import uproot
 import os
+import awkward as ak
 
 def particleKinematicsPlot(events=None,particle=None,outdir=None,return_plot=False):
     """
