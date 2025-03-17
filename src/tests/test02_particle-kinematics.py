@@ -1,9 +1,8 @@
 import pytest
 from epic_ecal_ai.dataloader import dataLoader
 from epic_ecal_ai.plotting.raw_data.particle_kinematics import particleKinematicsPlot
-
 import matplotlib.pyplot as plt
-
+import os
 def test_electron_plot():
     os.makedirs("artifacts",exist_ok=True)
     plt.plot([1],[2])
