@@ -9,6 +9,6 @@ lint:
 	pylint --disable=R,C src/epic_ecal_ai/*.py
 
 test:
-	PYTHONPATH=src pytest -v src/tests/*.py
+	MPLBACKEND=Agg PYTHONPATH=src pytest -v src/tests/*.py
 
 all: install format lint test 
