@@ -50,3 +50,4 @@ jobs:
         folder: ./artifacts/
         token: ${{ secrets.PAT_GH_PAGES }}
         clean: true
+        force: true
