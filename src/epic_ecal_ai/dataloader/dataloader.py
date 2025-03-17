@@ -1,5 +1,5 @@
 import uproot
-from epic-ecal-ai.dataloader import dropboxLoader
+from epic_ecal_ai.dataloader import dropboxLoader
 
 def load_uproot_events(particle: str, index: int, source: str) --> uproot.TBranch:
     """

@@ -1,6 +1,6 @@
 import pytest
-from epic-ecal-ai.dataloader import dataloader
-from epic-ecal-ai.plotting.raw-data.particle-kinematics import particleKinematicsPlot
+from epic_ecal_ai.dataloader import dataloader
+from epic_ecal_ai.plotting.raw_data.particle_kinematics import particleKinematicsPlot
 
 def test_electron_plot():
     outdir = "artifacts"

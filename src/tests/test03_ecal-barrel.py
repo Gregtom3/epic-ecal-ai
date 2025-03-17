@@ -1,6 +1,6 @@
 import pytest
-from epic-ecal-ai.dataloader import dataloader
-from epic-ecal-ai.plotting.raw-data.ecal-barrel import ecalBarrelPlot_v1
+from epic_ecal_ai.dataloader import dataloader
+from epic_ecal_ai.plotting.raw_data.ecal_barrel import ecalBarrelPlot_v1
 
 def test_electron_plot():
     outdir = "artifacts"

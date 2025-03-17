@@ -1,6 +1,6 @@
 import pytest
-from epic-ecal-ai.dataloader import dataloader
-from epic-ecal-ai.dataloader import dropboxLoader
+from epic_ecal_ai.dataloader import dataloader
+from epic_ecal_ai.dataloader import dropboxLoader
 
 def test_dropboxLoader():
 
