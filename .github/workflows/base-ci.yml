@@ -18,9 +18,6 @@ jobs:
     - name: Run tests and generate plots
       run: make test
 
-    - name: Debug List artifacts before upload
-      run: ls -R ./artifacts/ || echo "No artifacts found!"
-
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
@@ -39,15 +36,20 @@ jobs:
       with:
         name: artifacts
         path: ./artifacts/
+    
+    - name: Prepare Deployment Directory
+      run: |
+        mkdir -p ./gh-pages-deploy
+        mv ./artifacts ./gh-pages-deploy/artifacts
 
-    - name: Debug List downloaded artifacts
-      run: ls -R ./artifacts/ || echo "No artifacts found after download!"
+    - name: Deploy timestamp
+      run: date > ./gh-pages-deploy/timestamp.txt
 
     - name: Publish to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         branch: gh-pages
-        folder: ./artifacts/
+        folder: ./gh-pages-deploy
         token: ${{ secrets.PAT_GH_PAGES }}
         clean: true
         force: true
