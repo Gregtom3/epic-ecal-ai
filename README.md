@@ -1,6 +1,5 @@
-[![Make environment](https://github.com/Gregtom3/epic-ecal-ai/actions/workflows/base-ci.yml/badge.svg)](https://github.com/Gregtom3/epic-ecal-ai/actions/workflows/base-ci.yml)
+:rocket: [![Make environment](https://github.com/Gregtom3/epic-ecal-ai/actions/workflows/base-ci.yml/badge.svg)](https://github.com/Gregtom3/epic-ecal-ai/actions/workflows/base-ci.yml)
 
-:rocket: CI/CD automates a GitHub pages for this project. Scroll to the bottom of the README to view latest results.
 
 # AI for the ePIC Barrel Calorimeter
 
@@ -10,17 +9,25 @@ A repository for testing/implementing AI methods with the ePIC barrel calorimete
 
 Results are taken from the functions in `src/tests/`.
 
-### test02_particle-kinematics
+<details>
+<summary>test02_particle-kinematics</summary>
+<br>
 
-Electron
+
+Electron kinematics
 
 ![Electron Plot](https://github.com/Gregtom3/epic-ecal-ai/blob/gh-pages/artifacts/particle-kinematics/electron_kinematics.png)
 
-Pion
+Pion kinematics
 
 ![Pion Plot](https://github.com/Gregtom3/epic-ecal-ai/blob/gh-pages/artifacts/particle-kinematics/pion_kinematics.png)
 
-### test03_ecal-barrel
+</details>
+
+<details>
+<summary>test03_ecal-barrel</summary>
+<br>
+  
 
 Electron
 - ECAL Barrel Plot 1
@@ -39,6 +46,8 @@ Pion
 - ECAL Barrel Plot 2
 
 ![Pion Plot](https://github.com/Gregtom3/epic-ecal-ai/blob/gh-pages/artifacts/ecal-barrel/pion_ecalBarrelPlot_v2.png)
+
+</details>
 
 ## Contact
 
