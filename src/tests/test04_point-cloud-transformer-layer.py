@@ -1,3 +1,4 @@
+# Credit to https://github.com/lucidrains/point-transformer-pytorch
 import torch
 from point_transformer_pytorch import PointTransformerLayer
 
